@@ -1,22 +1,36 @@
 /* main.do */
 /* Author: Lars Vilhuber */
-/* NOTE: this is a VERY simple example file
-         it does NOT fully comply with best practices
-*/
 
-global BASEDIR "/workspaces/testing" /* <--- adjust as necessary */
-
-global DATADIR "${BASEDIR}/data"
-global CODEDIR "${BASEDIR}/code"
-
-sysuse auto
-desc
-
-/* we list the ado files - by default, it should list 'estout' 
-   that we installed via the setup.do during the build phase
-   of the Docker image */
-
-ado
+include "config.do"
+global DATADIR "${rootdir}/data"
+global CODEDIR "${rootdir}/code"
 
 
+
+
+/*============================= start code =========================*/
+
+/* download data */
+ssccount
+
+describe
+
+save "${DATADIR}/sscpackages", replace
+
+/* keep only November 2022 */
+
+keep if mo==tm(2022m11)
+
+preserve
+
+collapse (sum) npkghit
+li
+
+/* top 10 (in reverse order) */
+
+restore
+
+sort npkghit
+
+li in -10/L
 
