@@ -106,7 +106,13 @@ To run the image,  the license needs to be available to the Github Codespaces as
 cat stata.lic | base64
 ```
 
-where `stata.lic` is your Stata license file. Then create a new organization secret called `STATA_LIC_BASE64`, and paste the information into the prompt. 
+where `stata.lic` is your Stata license file. Then create a new organization secret called `STATA_LIC_BASE64`, and paste the information into the prompt. Alternatively, you can use the `gh` CLI:
+
+```bash
+gh secret set STATA_LIC_BASE64 --body "$(cat stata.lic | base64)"
+```
+
+which will set a repository-level secret (this might override one at the organization level).
 
 ![Secret named](assets/codespace-secret-1.png)
 
