@@ -1,5 +1,8 @@
 name: Compute analysis
 
+permissions:
+  contents: write
+  
 on:
   push:
     branches:
