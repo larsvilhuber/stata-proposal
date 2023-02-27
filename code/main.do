@@ -22,9 +22,14 @@ save "${DATADIR}/sscpackages", replace
 keep if mo==tm(2022m11)
 
 preserve
-
 collapse (sum) npkghit
 li
+/* number of authors */
+
+restore, preserve
+collapse (sum) npkghit, by(author)
+qui sum npkghit
+di "There are `r(N)' authors."
 
 /* top 10 (in reverse order) */
 
