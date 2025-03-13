@@ -17,24 +17,29 @@ describe
 
 save "${DATADIR}/sscpackages", replace
 
-/* keep only November 2022 */
+/* keep only January 2025 */
 
-keep if mo==tm(2022m11)
+keep if mo==tm(2025m1)
 
 preserve
 collapse (sum) npkghit
 li
-/* number of authors */
 
+/* number of packages */
+restore, preserve
+sort package
+collapse (sum) npkghit, by(package)
+qui sum npkghit
+di "There are `r(N)' packages"
+
+/* number of authors */
 restore, preserve
 collapse (sum) npkghit, by(author)
 qui sum npkghit
 di "There are `r(N)' authors."
 
 /* top 10 (in reverse order) */
-
 restore
-
 sort npkghit
 
 li in -10/L

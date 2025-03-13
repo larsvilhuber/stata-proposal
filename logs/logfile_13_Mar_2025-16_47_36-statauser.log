@@ -1,0 +1,703 @@
+-------------------------------------------------------------------------------
+      name:  ldi
+       log:  /project/logs/logfile_13_Mar_2025-16_47_36-statauser.log
+  log type:  text
+ opened on:  13 Mar 2025, 16:47:36
+
+. 
+. /* It will provide some info about how and when the program was run */
+. 
+. /* install any packages locally */
+. di "=== Redirecting where Stata searches for ado files ==="
+=== Redirecting where Stata searches for ado files ===
+
+. capture mkdir "$rootdir/ado"
+
+. sysdir set PERSONAL "$rootdir/ado/personal"
+
+. sysdir set PLUS     "$rootdir/ado/plus"
+
+. sysdir set SITE     "$rootdir/ado/site"
+
+. sysdir
+   STATA:  /usr/local/stata/
+    BASE:  /usr/local/stata/ado/base/
+    SITE:  /project/ado/site/
+    PLUS:  /project/ado/plus/
+PERSONAL:  /project/ado/personal/
+OLDPLACE:  ~/ado/
+
+. di "=== Verifying pre-existing ado files - normally, this should be EMPTY upo
+> n first run"
+=== Verifying pre-existing ado files - normally, this should be EMPTY upon firs
+> t run
+
+. ado
+
+[1] package ssccount from http://fmwww.bc.edu/repec/bocode/s
+      'SSCCOUNT': module to download ssc hits over time for user-written packag
+> es
+
+. di "=========================="
+==========================
+
+. 
+. 
+. 
+. di "=== SYSTEM DIAGNOSTICS ==="
+=== SYSTEM DIAGNOSTICS ===
+
+. creturn list
+
+System values
+-------------
+
+    ---------------------------------------------------------------------------
+        c(current_date) = "13 Mar 2025"
+        c(current_time) = "16:47:36"
+           c(rmsg_time) = 0                          (seconds, from set rmsg)
+    ---------------------------------------------------------------------------
+       c(stata_version) = 17
+             c(version) = 17                         (version)
+         c(userversion) = 17                         (version)
+      c(dyndoc_version) = 2                          (dyndoc)
+    ---------------------------------------------------------------------------
+           c(born_date) = "19 Jul 2022"
+             c(edition) = "BE"
+        c(edition_real) = "MP"
+                 c(bit) = 64
+                  c(SE) = 1
+                  c(MP) = 1
+          c(processors) = 4                          (Stata/MP, set processors)
+      c(processors_lic) = 32
+     c(processors_mach) = 4
+      c(processors_max) = 4
+                c(mode) = "batch"
+             c(console) = "console"
+    ---------------------------------------------------------------------------
+                  c(os) = "Unix"
+               c(osdtl) = ""
+            c(hostname) = "2deab17c33a7"
+        c(machine_type) = "PC (64-bit x86-64)"
+           c(byteorder) = "lohi"
+            c(username) = "statauser"
+    ---------------------------------------------------------------------------
+
+Directories and paths
+---------------------
+
+    ---------------------------------------------------------------------------
+        c(sysdir_stata) = "/usr/local/stata/"        (sysdir)
+         c(sysdir_base) = "/usr/local/stata/.."      (sysdir)
+         c(sysdir_site) = "/project/ado/site/"       (sysdir)
+         c(sysdir_plus) = "/project/ado/plus/"       (sysdir)
+     c(sysdir_personal) = "/project/ado/pers.."      (sysdir)
+     c(sysdir_oldplace) = "~/ado/"                   (sysdir)
+              c(tmpdir) = "/tmp"
+    ---------------------------------------------------------------------------
+             c(adopath) = "BASE;SITE;.;PERSO.."      (adopath)
+                 c(pwd) = "/project/code"            (cd)
+              c(dirsep) = "/"
+    ---------------------------------------------------------------------------
+
+System limits
+-------------
+
+    ---------------------------------------------------------------------------
+        c(max_N_theory) = 1099511627775
+        c(max_k_theory) = 5000                       (set maxvar)
+    c(max_width_theory) = 1048576                    (set maxvar)
+    ---------------------------------------------------------------------------
+          c(max_matdim) = 65534
+    ---------------------------------------------------------------------------
+        c(max_it_cvars) = 64
+        c(max_it_fvars) = 8
+    ---------------------------------------------------------------------------
+        c(max_macrolen) = 15480200
+            c(macrolen) = 645200                     (set maxvar)
+             c(charlen) = 67783
+          c(max_cmdlen) = 15480216
+              c(cmdlen) = 645216                     (set maxvar)
+         c(namelenbyte) = 128
+         c(namelenchar) = 32
+               c(eqlen) = 1337
+    ---------------------------------------------------------------------------
+
+Numerical and string limits
+---------------------------
+
+    ---------------------------------------------------------------------------
+           c(mindouble) = -8.9884656743e+307
+           c(maxdouble) = 8.9884656743e+307
+           c(epsdouble) = 2.22044604925e-16
+      c(smallestdouble) = 2.2250738585e-308
+    ---------------------------------------------------------------------------
+            c(minfloat) = -1.70141173319e+38
+            c(maxfloat) = 1.70141173319e+38
+            c(epsfloat) = 1.19209289551e-07
+    ---------------------------------------------------------------------------
+             c(minlong) = -2147483647
+             c(maxlong) = 2147483620
+    ---------------------------------------------------------------------------
+              c(minint) = -32767
+              c(maxint) = 32740
+    ---------------------------------------------------------------------------
+             c(minbyte) = -127
+             c(maxbyte) = 100
+    ---------------------------------------------------------------------------
+        c(maxstrvarlen) = 2045
+       c(maxstrlvarlen) = 2000000000
+        c(maxvlabellen) = 32000
+    ---------------------------------------------------------------------------
+
+Current dataset
+---------------
+
+    ---------------------------------------------------------------------------
+               c(frame) = "default"
+                   c(N) = 0
+                   c(k) = 0
+               c(width) = 0
+             c(changed) = 0
+            c(filename) = ""
+            c(filedate) = ""
+    ---------------------------------------------------------------------------
+
+Memory settings
+---------------
+
+    ---------------------------------------------------------------------------
+              c(memory) = 33554432
+              c(maxvar) = 5000                       (set maxvar)
+            c(niceness) = 5                          (set min_memory)
+          c(min_memory) = 0                          (set min_memory)
+          c(max_memory) = .                          (set max_memory)
+         c(segmentsize) = 33554432                   (set segmentsize)
+             c(adosize) = 1000                       (set adosize)
+     c(max_preservemem) = 1073741824                 (set max_preservemem)
+    ---------------------------------------------------------------------------
+
+Output settings
+---------------
+
+    ---------------------------------------------------------------------------
+                c(more) = "off"                      (set more)
+                c(rmsg) = "off"                      (set rmsg)
+                  c(dp) = "period"                   (set dp)
+            c(linesize) = 79                         (set linesize)
+            c(pagesize) = 23                         (set pagesize)
+             c(logtype) = "smcl"                     (set logtype)
+             c(noisily) = 1
+    ---------------------------------------------------------------------------
+             c(iterlog) = "on"                       (set iterlog)
+    ---------------------------------------------------------------------------
+               c(level) = 95                         (set level)
+              c(clevel) = 95                         (set clevel)
+    ---------------------------------------------------------------------------
+      c(showbaselevels) = ""                         (set showbaselevels)
+      c(showemptycells) = ""                         (set showemptycells)
+         c(showomitted) = ""                         (set showomitted)
+             c(fvlabel) = "on"                       (set fvlabel)
+              c(fvwrap) = 1                          (set fvwrap)
+            c(fvwrapon) = "word"                     (set fvwrapon)
+            c(lstretch) = ""                         (set lstretch)
+    ---------------------------------------------------------------------------
+             c(cformat) = ""                         (set cformat)
+             c(sformat) = ""                         (set sformat)
+             c(pformat) = ""                         (set pformat)
+    ---------------------------------------------------------------------------
+      c(coeftabresults) = "on"                       (set coeftabresults)
+                c(dots) = "on"                       (set dots)
+    ---------------------------------------------------------------------------
+       c(collect_label) = "default"                  (set collect_label)
+       c(collect_style) = "default"                  (set collect_style)
+         c(table_style) = "table"                    (set table_style)
+        c(etable_style) = "etable"                   (set etable_style)
+        c(collect_warn) = "on"                       (set collect_warn)
+
+Interface settings
+------------------
+
+    ---------------------------------------------------------------------------
+             c(linegap) = .                          (set linegap)
+       c(scrollbufsize) = .                          (set scrollbufsize)
+               c(maxdb) = 50                         (set maxdb)
+    ---------------------------------------------------------------------------
+
+Graphics settings
+-----------------
+
+    ---------------------------------------------------------------------------
+            c(graphics) = "on"                       (set graphics)
+              c(scheme) = "s2color"                  (set scheme)
+          c(printcolor) = "asis"                     (set printcolor)
+       c(min_graphsize) = 1                          (region_options)
+       c(max_graphsize) = 100                        (region_options)
+    ---------------------------------------------------------------------------
+
+Network settings
+----------------
+
+    ---------------------------------------------------------------------------
+           c(httpproxy) = "off"                      (set httpproxy)
+       c(httpproxyhost) = ""                         (set httpproxyhost)
+       c(httpproxyport) = 80                         (set httpproxyport)
+    ---------------------------------------------------------------------------
+       c(httpproxyauth) = "off"                      (set httpproxyauth)
+       c(httpproxyuser) = ""                         (set httpproxyuser)
+         c(httpproxypw) = ""                         (set httpproxypw)
+    ---------------------------------------------------------------------------
+
+Trace (program debugging) settings
+----------------------------------
+
+    ---------------------------------------------------------------------------
+               c(trace) = "off"                      (set trace)
+          c(tracedepth) = 32000                      (set tracedepth)
+            c(tracesep) = "on"                       (set tracesep)
+         c(traceindent) = "on"                       (set traceindent)
+         c(traceexpand) = "on"                       (set traceexpand)
+         c(tracenumber) = "off"                      (set tracenumber)
+         c(tracehilite) = ""                         (set tracehilite)
+    ---------------------------------------------------------------------------
+
+Mata settings
+-------------
+
+    ---------------------------------------------------------------------------
+          c(matastrict) = "off"                      (set matastrict)
+            c(matalnum) = "off"                      (set matalnum)
+        c(mataoptimize) = "on"                       (set mataoptimize)
+           c(matafavor) = "space"                    (set matafavor)
+           c(matacache) = 2000                       (set matacache)
+            c(matalibs) = ""                         (set matalibs)
+         c(matamofirst) = "off"                      (set matamofirst)
+        c(matasolvetol) = .                          (set matasolvetol)
+    ---------------------------------------------------------------------------
+
+Java settings
+-------------
+
+    ---------------------------------------------------------------------------
+        c(java_heapmax) = "4096m"                    (set java_heapmax)
+           c(java_home) = "/usr/local/stata/.."      (set java_home)
+    ---------------------------------------------------------------------------
+
+LAPACK settings
+---------------
+
+    ---------------------------------------------------------------------------
+          c(lapack_mkl) = "on"                       (set lapack_mkl)
+      c(lapack_mkl_cnr) = "default"                  (set lapack_mkl_cnr)
+    ---------------------------------------------------------------------------
+
+putdocx settings
+----------------
+
+    ---------------------------------------------------------------------------
+      c(docx_hardbreak) = "off"                      (set docx_hardbreak)
+       c(docx_paramode) = "off"                      (set docx_paramode)
+    ---------------------------------------------------------------------------
+
+Python settings
+---------------
+
+    ---------------------------------------------------------------------------
+         c(python_exec) = ""                         (set python_exec)
+     c(python_userpath) = ""                         (set python_userpath)
+    ---------------------------------------------------------------------------
+
+RNG settings
+------------
+
+    ---------------------------------------------------------------------------
+                 c(rng) = "default"                  (set rng)
+         c(rng_current) = "mt64"
+            c(rngstate) = "XAA00000000000000.."      (set rngstate)
+       c(rngseed_mt64s) = 123456789
+           c(rngstream) = 1                          (set rngstream)
+    ---------------------------------------------------------------------------
+
+sort settings
+-------------
+
+    ---------------------------------------------------------------------------
+          c(sortmethod) = "default"                  (set sortmethod)
+        c(sort_current) = "fsort"
+        c(sortrngstate) = "1001XZA112210f4b1.."      (set sortrngstate)
+    ---------------------------------------------------------------------------
+
+Unicode settings
+----------------
+
+    ---------------------------------------------------------------------------
+           c(locale_ui) = ""                         (set locale_ui)
+    c(locale_functions) = "en_US"                    (set locale_functions)
+      c(locale_icudflt) = "en_US"                    (unicode locale)
+    ---------------------------------------------------------------------------
+
+Other settings
+--------------
+
+    ---------------------------------------------------------------------------
+                c(type) = "float"                    (set type)
+             c(maxiter) = 300                        (set maxiter)
+       c(searchdefault) = "all"                      (set searchdefault)
+           c(varabbrev) = "on"                       (set varabbrev)
+          c(emptycells) = "keep"                     (set emptycells)
+             c(fvtrack) = "term"                     (set fvtrack)
+              c(fvbase) = "on"                       (set fvbase)
+             c(odbcmgr) = "iodbc"                    (set odbcmgr)
+          c(odbcdriver) = "unicode"                  (set odbcdriver)
+             c(fredkey) = ""                         (set fredkey)
+      c(collect_double) = "on"                       (set collect_double)
+    ---------------------------------------------------------------------------
+
+Other
+-----
+
+    ---------------------------------------------------------------------------
+                  c(pi) = 3.141592653589793
+               c(alpha) = "a b c d e f g h i.."
+               c(ALPHA) = "A B C D E F G H I.."
+                c(Mons) = "Jan Feb Mar Apr M.."
+              c(Months) = "January February .."
+               c(Wdays) = "Sun Mon Tue Wed T.."
+            c(Weekdays) = "Sunday Monday Tue.."
+                  c(rc) = 693                        (capture)
+    ---------------------------------------------------------------------------
+
+. query
+
+-------------------------------------------------------------------------------
+    Memory settings
+      set maxvar           5000       2048-120000; max. vars allowed
+      set niceness         5          0-10
+      set min_memory       0          0-1600g
+      set max_memory       .          32m-1600g or .
+      set segmentsize      32m        1m-32g
+      set adosize          1000       kilobytes
+      set max_preservemem  1g         0-1600g
+-------------------------------------------------------------------------------
+    Output settings
+      set more             off
+      set rmsg             off
+      set dp               period     may be period or comma
+      set linesize         79         characters
+      set pagesize         23         lines
+      -------------------------------------------------------------------------
+      set iterlog          on
+      -------------------------------------------------------------------------
+      set level            95         percent confidence intervals
+      set clevel           95         percent credible intervals
+      -------------------------------------------------------------------------
+      set showbaselevels              may be empty, off, on, or all
+      set showemptycells              may be empty, off, or on
+      set showomitted                 may be empty, off, or on
+      set fvlabel          on
+      set fvwrap           1          
+      set fvwrapon         word       may be word or width
+      -------------------------------------------------------------------------
+      set lstretch                    may be empty, off, or on
+      -------------------------------------------------------------------------
+      set cformat                     may be empty or a numerical format
+      set pformat                     may be empty or a numerical format
+      set sformat                     may be empty or a numerical format
+      -------------------------------------------------------------------------
+      set coeftabresults   on
+      set dots             on
+      -------------------------------------------------------------------------
+      set logtype          smcl       may be smcl or text
+      -------------------------------------------------------------------------
+      set collect_label    default
+      set collect_style    default
+      set table_style      table
+      set etable_style     etable
+      set collect_warn     on
+-------------------------------------------------------------------------------
+    Interface settings
+      set linegap                     (not relevant)
+      set scrollbufsize               (not relevant)
+      -------------------------------------------------------------------------
+      set maxdb                       (not relevant)
+-------------------------------------------------------------------------------
+    Graphics settings
+      set graphics         on
+      set scheme           s2color
+      set printcolor       asis       may be automatic, asis, gs1, gs2, gs3
+-------------------------------------------------------------------------------
+    Network settings
+      set httpproxy        off
+      set httpproxyhost    
+      set httpproxyport    80
+      -------------------------------------------------------------------------
+      set httpproxyauth    off
+      set httpproxyuser    
+      set httpproxypw      
+-------------------------------------------------------------------------------
+    Update settings
+      set update_query                (not relevant)
+      set update_interval             (not relevant)
+      set update_prompt               (not relevant)
+-------------------------------------------------------------------------------
+    Trace (programming debugging) settings
+      set trace            off
+      set tracedepth       32000
+      set traceexpand      on
+      set tracesep         on
+      set traceindent      on
+      set tracenumber      off
+      set tracehilite      
+-------------------------------------------------------------------------------
+    Mata settings
+      set matastrict       off
+      set matalnum         off
+      set mataoptimize     on
+      set matafavor        space      may be space or speed
+      set matacache        2000       kilobytes
+      set matalibs         lmatabase;lmatapath;lmataerm;lmatalasso;lmatacollect
+> ;lmataado;lmatapss;lmatameta;lmatamcmc;lmatasem;lmataopt;lmatatab;lmatafc;lma
+> tasp;lmatabma;lmatagsem;lmatami;lmatanumlib;lmatapostest;lmatamixlog;lmatasvy
+      set matamofirst      off
+      set matasolvetol     .          may be . or any double precision number
+-------------------------------------------------------------------------------
+    Java settings
+      set java_heapmax     4096m
+      set java_home        /usr/local/stata/utilities/java/linux-x64/zulu-jdk17
+> .0.3/
+-------------------------------------------------------------------------------
+    LAPACK settings
+      set lapack_mkl       on
+      set lapack_mkl_cnr   default
+-------------------------------------------------------------------------------
+    putdocx settings
+      set docx_hardbreak   off
+      set docx_paramode    off
+-------------------------------------------------------------------------------
+    Python settings
+      set python_exec      
+      set python_userpath  
+-------------------------------------------------------------------------------
+    RNG settings
+      set rng              default    may be default, mt64, mt64s, or kiss32
+      set rngstate         XAA00000000000000000000000000000000000000...
+      set rngstream        1          rng stream number
+-------------------------------------------------------------------------------
+    sort settings
+      set sortmethod       default    may be default, fsort, or qsort
+                           fsort      current sort method
+      set sortrngstate     1001XZA112210f4b16c1cb10507a1f38cb440c400...
+-------------------------------------------------------------------------------
+    Unicode settings
+      set locale_ui        
+      set locale_functions en_US
+-------------------------------------------------------------------------------
+    Other settings
+      set type             float      may be float or double
+      set maxiter          300        max iterations for estimation commands
+      set searchdefault    all        may be local, net, or all
+      set varabbrev        on
+      set emptycells       keep       may be keep or drop
+      set fvtrack          term       may be term or factor
+      set fvbase           on
+      set processors       4          1-4
+      set odbcmgr          iodbc      may be iodbc or unixodbc
+      set odbcdriver       unicode    may be unicode, ansi, or default
+      set fredkey          
+      set collect_double   on
+-------------------------------------------------------------------------------
+
+. di "=========================="
+==========================
+
+. 
+. 
+. 
+. /* add packages to the macro */
+. 
+.     
+.     if !missing("`ssc_packages'") {
+.         foreach pkg in `ssc_packages' {
+  2.             capture which `pkg'
+  3.             if _rc == 111 {                 
+  4.                dis "Installing `pkg'"
+  5.                 ssc install `pkg', replace
+  6.             }
+  7.             which `pkg'
+  8.         }
+/project/ado/plus/s/ssccount.ado
+*! v 1.1 Tim Morris 28 Mar 2022
+.     }
+
+. 
+. /*===========================================================================
+> ===================*/
+. /* If you need to "net install" packages, add lines to this section          
+>                    */
+.     * Install packages using net
+.     * net install grc1leg, from("http://www.stata.com/users/vwiggins/")
+.     
+. /* other commands, rarely used, uncomment as needed */
+. 
+. /* if needing egenmore, uncomment next line. egenmore cannot be verified by "
+> which" . There are some other packages like that*/
+. 
+. // ssc install egenmore
+. 
+. /* yet other programs have no install capability, and may need to be copied *
+> /
+. 
+. // e.g.
+. //  copy (URL) (name_of_file.ado)
+. // example:
+. // copy http://www.sacarny.com/wp-content/uploads/2015/08/ebayes.ado ebayes.a
+> do
+. 
+. /*===========================================================================
+> ===================*/
+. /* after installing all packages, it may be necessary to issue the mata mlib 
+> index command */
+. /* This should always be the LAST command after installing all packages      
+>               */
+. 
+.         mata: mata mlib index
+.mlib libraries to be searched are now
+    lmatabase;lmatapath;lmataerm;lmatalasso;lmatacollect;lmataado;lmatapss;lmat
+> ameta;lmatamcmc;lmatasem;lmataopt;lmatatab;lmatafc;lmatasp;lmatabma;lmatagsem
+> ;lmatami;lmatanumlib;lmatapostest;lmatamixlog;lmatasvy
+
+. 
+. /*===========================================================================
+> ===================*/
+. /* This is specific to AEA replication environment. May not be needed if no c
+> onfidential data   */
+. /* are used in the reproducibility check.                                    
+>                    */
+. /* Replicator should check the JIRA field "Working location of restricted dat
+> a" for right path  */
+. 
+. global sdrive ""
+
+. 
+. di "========================================= END SETUP + DIAGNOSTICS =======
+> ============================="
+========================================= END SETUP + DIAGNOSTICS =============
+> =======================
+
+. 
+. global DATADIR "${rootdir}/data"
+
+. global CODEDIR "${rootdir}/code"
+
+. 
+. 
+. 
+. 
+. /*============================= start code =========================*/
+. 
+. /* download data */
+. ssccount
+Looking to download 211 months of SSC files (Jul 2007 to Jan 2025)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+..............................   600
+..................................................   650
+.....................................
+Warning: dataset Apr 2017 was not found.
+.............   700
+..................................................   750
+..............................
+
+. 
+. describe
+
+Contains data from http://repec.org/docs/sschotP570.dta
+ Observations:       584,805                  
+    Variables:             4                  10 Oct 2007 21:24
+-------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------
+package         str26   %26s                  Package
+author          str33   %33s                  Author
+npkghit         double  %9.0f                 Number of hits
+mo              int     %tm..                 Date
+-------------------------------------------------------------------------------
+Sorted by: author
+     Note: Dataset has changed since last saved.
+
+. 
+. save "${DATADIR}/sscpackages", replace
+(file /project/data/sscpackages.dta not found)
+file /project/data/sscpackages.dta saved
+
+. 
+. /* keep only January 2025 */
+. 
+. keep if mo==tm(2025m1)
+(580,204 observations deleted)
+
+. 
+. preserve
+
+. collapse (sum) npkghit
+
+. li
+
+     +---------+
+     | npkghit |
+     |---------|
+  1. | 2001107 |
+     +---------+
+
+. 
+. /* number of packages */
+. restore, preserve
+
+. sort package
+
+. collapse (sum) npkghit, by(package)
+
+. qui sum npkghit
+
+. di "There are `r(N)' packages"
+There are 3460 packages
+
+. 
+. /* number of authors */
+. restore, preserve
+
+. collapse (sum) npkghit, by(author)
+
+. qui sum npkghit
+
+. di "There are `r(N)' authors."
+There are 1430 authors.
+
+. 
+. /* top 10 (in reverse order) */
+. restore
+
+. sort npkghit
+
+. 
+. li in -10/L
+
+      +----------------------------------------------------+
+      |  package               author   npkghit         mo |
+      |----------------------------------------------------|
+4592. |   IVREG2      Mark E Schaffer     30116   Jan 2025 |
+4593. | IVREG210      Steven Stillman     30129   Jan 2025 |
+4594. | IVREG210   Christopher F Baum     30129   Jan 2025 |
+4595. | IVREG210      Mark E Schaffer     30129   Jan 2025 |
+4596. |   FTOOLS       Sergio Correia     33240   Jan 2025 |
+      |----------------------------------------------------|
+4597. |  WINSOR2           Yujun Lian     50141   Jan 2025 |
+4598. |  REGHDFE       Sergio Correia     50304   Jan 2025 |
+4599. |    ASDOC       Attaullah Shah     50571   Jan 2025 |
+4600. |  OUTREG2             Roy Wada     58025   Jan 2025 |
+4601. |   ESTOUT             Ben Jann     67759   Jan 2025 |
+      +----------------------------------------------------+
+
+. 
+. 
+end of do-file

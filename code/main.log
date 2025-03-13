@@ -127,12 +127,12 @@ Rootdir has been set to: /project
 . 
 . log using "$logdir/logfile_`cdate'-`ctime'-`c(username)'.log", name(ldi) repl
 > ace text
-(file /project/logs/logfile_12_Mar_2025-20_42_51-statauser.log not found)
+(file /project/logs/logfile_13_Mar_2025-16_47_36-statauser.log not found)
 -------------------------------------------------------------------------------
       name:  ldi
-       log:  /project/logs/logfile_12_Mar_2025-20_42_51-statauser.log
+       log:  /project/logs/logfile_13_Mar_2025-16_47_36-statauser.log
   log type:  text
- opened on:  12 Mar 2025, 20:42:51
+ opened on:  13 Mar 2025, 16:47:36
 
 . 
 . /* It will provide some info about how and when the program was run */
@@ -183,8 +183,8 @@ System values
 -------------
 
     ---------------------------------------------------------------------------
-        c(current_date) = "12 Mar 2025"
-        c(current_time) = "20:42:51"
+        c(current_date) = "13 Mar 2025"
+        c(current_time) = "16:47:36"
            c(rmsg_time) = 0                          (seconds, from set rmsg)
     ---------------------------------------------------------------------------
        c(stata_version) = 17
@@ -207,7 +207,7 @@ System values
     ---------------------------------------------------------------------------
                   c(os) = "Unix"
                c(osdtl) = ""
-            c(hostname) = "891f51c3b850"
+            c(hostname) = "2deab17c33a7"
         c(machine_type) = "PC (64-bit x86-64)"
            c(byteorder) = "lohi"
             c(username) = "statauser"
@@ -761,10 +761,10 @@ Sorted by: author
 file /project/data/sscpackages.dta saved
 
 . 
-. /* keep only November 2022 */
+. /* keep only January 2025 */
 . 
-. keep if mo==tm(2022m11)
-(580,569 observations deleted)
+. keep if mo==tm(2025m1)
+(580,204 observations deleted)
 
 . 
 . preserve
@@ -776,11 +776,24 @@ file /project/data/sscpackages.dta saved
      +---------+
      | npkghit |
      |---------|
-  1. | 1822596 |
+  1. | 2001107 |
      +---------+
 
-. /* number of authors */
 . 
+. /* number of packages */
+. restore, preserve
+
+. sort package
+
+. collapse (sum) npkghit, by(package)
+
+. qui sum npkghit
+
+. di "There are `r(N)' packages"
+There are 3460 packages
+
+. 
+. /* number of authors */
 . restore, preserve
 
 . collapse (sum) npkghit, by(author)
@@ -788,14 +801,12 @@ file /project/data/sscpackages.dta saved
 . qui sum npkghit
 
 . di "There are `r(N)' authors."
-There are 1295 authors.
+There are 1430 authors.
 
 . 
 . /* top 10 (in reverse order) */
-. 
 . restore
 
-. 
 . sort npkghit
 
 . 
@@ -804,17 +815,17 @@ There are 1295 authors.
       +----------------------------------------------------+
       |  package               author   npkghit         mo |
       |----------------------------------------------------|
-4227. | IVREG210   Christopher F Baum     17222   Nov 2022 |
-4228. | COEFPLOT             Ben Jann     17615   Nov 2022 |
-4229. |   LOGOUT             Roy Wada     18902   Nov 2022 |
-4230. |   FTOOLS       Sergio Correia     21006   Nov 2022 |
-4231. |  REGHDFE       Sergio Correia     26462   Nov 2022 |
+4592. |   IVREG2      Mark E Schaffer     30116   Jan 2025 |
+4593. | IVREG210      Steven Stillman     30129   Jan 2025 |
+4594. | IVREG210   Christopher F Baum     30129   Jan 2025 |
+4595. | IVREG210      Mark E Schaffer     30129   Jan 2025 |
+4596. |   FTOOLS       Sergio Correia     33240   Jan 2025 |
       |----------------------------------------------------|
-4232. |    ASDOC       Attaullah Shah     38182   Nov 2022 |
-4233. |  WINSOR2           Yujun Lian     38555   Nov 2022 |
-4234. |  GRSTYLE             Ben Jann     57786   Nov 2022 |
-4235. |   ESTOUT             Ben Jann     68244   Nov 2022 |
-4236. |  OUTREG2             Roy Wada     76862   Nov 2022 |
+4597. |  WINSOR2           Yujun Lian     50141   Jan 2025 |
+4598. |  REGHDFE       Sergio Correia     50304   Jan 2025 |
+4599. |    ASDOC       Attaullah Shah     50571   Jan 2025 |
+4600. |  OUTREG2             Roy Wada     58025   Jan 2025 |
+4601. |   ESTOUT             Ben Jann     67759   Jan 2025 |
       +----------------------------------------------------+
 
 . 
