@@ -29,7 +29,7 @@ li
 restore, preserve
 sort package
 collapse (sum) npkghit, by(package)
-qui sum pnkghit
+qui sum npkghit
 di "There are `r(N)' packages"
 
 /* number of authors */
