@@ -38,9 +38,9 @@ collapse (sum) npkghit, by(author)
 qui sum npkghit
 di "There are `r(N)' authors."
 
-/* top 10 (in reverse order) */
+/* top 30 (in reverse order) */
 restore
 sort npkghit
 
-li in -10/L
+li in -30/L
 
