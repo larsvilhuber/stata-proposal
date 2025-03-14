@@ -22,8 +22,12 @@ save "${DATADIR}/sscpackages", replace
 keep if mo==tm(2025m1)
 
 preserve
+sort package
+bysort package: keep if _n==1
 collapse (sum) npkghit
+di "====== Total downloads of packages in this month ======="
 li
+di "========================================================"
 
 /* number of packages */
 restore, preserve

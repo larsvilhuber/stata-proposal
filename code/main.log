@@ -127,12 +127,12 @@ Rootdir has been set to: /project
 . 
 . log using "$logdir/logfile_`cdate'-`ctime'-`c(username)'.log", name(ldi) repl
 > ace text
-(file /project/logs/logfile_14_Mar_2025-01_31_56-statauser.log not found)
+(file /project/logs/logfile_14_Mar_2025-01_35_54-statauser.log not found)
 -------------------------------------------------------------------------------
       name:  ldi
-       log:  /project/logs/logfile_14_Mar_2025-01_31_56-statauser.log
+       log:  /project/logs/logfile_14_Mar_2025-01_35_54-statauser.log
   log type:  text
- opened on:  14 Mar 2025, 01:31:56
+ opened on:  14 Mar 2025, 01:35:54
 
 . 
 . /* It will provide some info about how and when the program was run */
@@ -184,7 +184,7 @@ System values
 
     ---------------------------------------------------------------------------
         c(current_date) = "14 Mar 2025"
-        c(current_time) = "01:31:56"
+        c(current_time) = "01:35:54"
            c(rmsg_time) = 0                          (seconds, from set rmsg)
     ---------------------------------------------------------------------------
        c(stata_version) = 17
@@ -207,7 +207,7 @@ System values
     ---------------------------------------------------------------------------
                   c(os) = "Unix"
                c(osdtl) = ""
-            c(hostname) = "78b3725a4799"
+            c(hostname) = "a351534db278"
         c(machine_type) = "PC (64-bit x86-64)"
            c(byteorder) = "lohi"
             c(username) = "statauser"
@@ -769,15 +769,26 @@ file /project/data/sscpackages.dta saved
 . 
 . preserve
 
+. sort package
+
+. bysort package: keep if _n==1
+(1,141 observations deleted)
+
 . collapse (sum) npkghit
+
+. di "====== Total downloads of packages in this month ======="
+====== Total downloads of packages in this month =======
 
 . li
 
      +---------+
      | npkghit |
      |---------|
-  1. | 2001107 |
+  1. | 1324321 |
      +---------+
+
+. di "========================================================"
+========================================================
 
 . 
 . /* number of packages */
@@ -816,33 +827,33 @@ There are 1430 authors.
       |  package               author   npkghit         mo |
       |----------------------------------------------------|
 4572. | PSMATCH2         Edwin Leuven     14974   Jan 2025 |
-4573. | DISTINCT         Gary Longton     15715   Jan 2025 |
-4574. | DISTINCT      Nicholas J. Cox     15715   Jan 2025 |
+4573. | DISTINCT      Nicholas J. Cox     15715   Jan 2025 |
+4574. | DISTINCT         Gary Longton     15715   Jan 2025 |
 4575. | REG2DOCX           Chuntao Li     17770   Jan 2025 |
 4576. | REG2DOCX             Yuan Xue     17770   Jan 2025 |
       |----------------------------------------------------|
 4577. | XTIVREG2      Mark E Schaffer     18862   Jan 2025 |
 4578. | COEFPLOT             Ben Jann     20716   Jan 2025 |
-4579. | SUM2DOCX           Chuntao Li     22006   Jan 2025 |
-4580. | SUM2DOCX             Yuan Xue     22006   Jan 2025 |
+4579. | SUM2DOCX             Yuan Xue     22006   Jan 2025 |
+4580. | SUM2DOCX           Chuntao Li     22006   Jan 2025 |
 4581. | RANKTEST     Frank Kleibergen     24274   Jan 2025 |
       |----------------------------------------------------|
-4582. | RANKTEST      Mark E Schaffer     24274   Jan 2025 |
-4583. | RANKTEST     Frank Windmeijer     24274   Jan 2025 |
-4584. |  IVREG28   Christopher F Baum     29832   Jan 2025 |
-4585. |  IVREG28      Mark E Schaffer     29832   Jan 2025 |
+4582. | RANKTEST     Frank Windmeijer     24274   Jan 2025 |
+4583. | RANKTEST      Mark E Schaffer     24274   Jan 2025 |
+4584. |  IVREG28      Mark E Schaffer     29832   Jan 2025 |
+4585. |  IVREG28   Christopher F Baum     29832   Jan 2025 |
 4586. |  IVREG28      Steven Stillman     29832   Jan 2025 |
       |----------------------------------------------------|
-4587. |  IVREG29   Christopher F Baum     29985   Jan 2025 |
+4587. |  IVREG29      Steven Stillman     29985   Jan 2025 |
 4588. |  IVREG29      Mark E Schaffer     29985   Jan 2025 |
-4589. |  IVREG29      Steven Stillman     29985   Jan 2025 |
+4589. |  IVREG29   Christopher F Baum     29985   Jan 2025 |
 4590. |   IVREG2   Christopher F Baum     30116   Jan 2025 |
-4591. |   IVREG2      Steven Stillman     30116   Jan 2025 |
+4591. |   IVREG2      Mark E Schaffer     30116   Jan 2025 |
       |----------------------------------------------------|
-4592. |   IVREG2      Mark E Schaffer     30116   Jan 2025 |
-4593. | IVREG210      Steven Stillman     30129   Jan 2025 |
-4594. | IVREG210   Christopher F Baum     30129   Jan 2025 |
-4595. | IVREG210      Mark E Schaffer     30129   Jan 2025 |
+4592. |   IVREG2      Steven Stillman     30116   Jan 2025 |
+4593. | IVREG210      Mark E Schaffer     30129   Jan 2025 |
+4594. | IVREG210      Steven Stillman     30129   Jan 2025 |
+4595. | IVREG210   Christopher F Baum     30129   Jan 2025 |
 4596. |   FTOOLS       Sergio Correia     33240   Jan 2025 |
       |----------------------------------------------------|
 4597. |  WINSOR2           Yujun Lian     50141   Jan 2025 |
