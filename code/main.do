@@ -28,6 +28,12 @@ collapse (sum) npkghit
 di "====== Total downloads of packages in this month ======="
 li
 di "========================================================"
+/* top 30 (in reverse order) */
+restore, preserve
+bysort package: keep if _n==1
+sort npkghit
+li in -30/L
+
 
 /* number of packages */
 restore, preserve
@@ -41,10 +47,4 @@ restore, preserve
 collapse (sum) npkghit, by(author)
 qui sum npkghit
 di "There are `r(N)' authors."
-
-/* top 30 (in reverse order) */
-restore
-sort npkghit
-
-li in -30/L
 
