@@ -127,12 +127,12 @@ Rootdir has been set to: /project
 . 
 . log using "$logdir/logfile_`cdate'-`ctime'-`c(username)'.log", name(ldi) repl
 > ace text
-(file /project/logs/logfile_19_Mar_2025-21_03_47-statauser.log not found)
+(file /project/logs/logfile_27_Mar_2025-23_16_11-statauser.log not found)
 -------------------------------------------------------------------------------
       name:  ldi
-       log:  /project/logs/logfile_19_Mar_2025-21_03_47-statauser.log
+       log:  /project/logs/logfile_27_Mar_2025-23_16_11-statauser.log
   log type:  text
- opened on:  19 Mar 2025, 21:03:47
+ opened on:  27 Mar 2025, 23:16:11
 
 . 
 . /* It will provide some info about how and when the program was run */
@@ -183,8 +183,8 @@ System values
 -------------
 
     ---------------------------------------------------------------------------
-        c(current_date) = "19 Mar 2025"
-        c(current_time) = "21:03:47"
+        c(current_date) = "27 Mar 2025"
+        c(current_time) = "23:16:11"
            c(rmsg_time) = 0                          (seconds, from set rmsg)
     ---------------------------------------------------------------------------
        c(stata_version) = 17
@@ -207,7 +207,7 @@ System values
     ---------------------------------------------------------------------------
                   c(os) = "Unix"
                c(osdtl) = ""
-            c(hostname) = "96930b4ae049"
+            c(hostname) = "6afbe5e2031e"
         c(machine_type) = "PC (64-bit x86-64)"
            c(byteorder) = "lohi"
             c(username) = "statauser"
